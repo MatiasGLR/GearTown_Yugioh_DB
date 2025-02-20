@@ -1,0 +1,22 @@
+* {
+    font-family: "Rajdhani", serif;
+    font-weight: 500;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+img {
+    width:90%;
+    max-width: 500px;
+}
+
+#imagen-carta {
+    width:50%;
+    max-width: 200px;
+    text-align: center;
+}
+
+p {
+    display:flex;
+    flex-direction: column;
+}
