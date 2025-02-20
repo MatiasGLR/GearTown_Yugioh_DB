@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const db = new sqlite.Database(
-    path.resolve(__dirname + '/enforth.db'),
+    path.resolve(__dirname + '/public/cartas.db'),
     (error) => {
         if(error) {
             return console.error(error);
@@ -27,7 +27,7 @@ const db = new sqlite.Database(
         db.run(` 
             CREATE TABLE IF NOT EXISTS Cartas (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                card_id INTEGER,
+                card_id TEXT,
                 img_url TEXT, 
                 expansion TEXT,
                 edicion TEXT,
@@ -46,4 +46,7 @@ const db = new sqlite.Database(
 
 app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/pages/index.html'));
 app.post('/api/agregarcarta', addcard.agregarcarta);
-app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/'));
+app.post('/api/filtrarcartas', addcard.filtrarcartas);
+app.post('/api/borrarcarta', addcard.borrarcarta);
+app.post('/api/modificarcantidad', addcard.modificarcantidad);
+app.get('*', (req, res) => res.status(404).sendFile(__dirname + '/pages/index.html'));

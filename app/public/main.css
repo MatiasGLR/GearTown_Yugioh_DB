@@ -20,3 +20,32 @@ p {
     display:flex;
     flex-direction: column;
 }
+
+.carta_imagen img {
+    width:60px;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+i {
+    font-size:30px;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+#boton_menos {
+    color:red;
+}
+
+#boton_mas {
+    color:green;
+}
+
+#boton_borrar {
+    color:purple
+}

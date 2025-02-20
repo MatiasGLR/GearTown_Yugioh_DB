@@ -27,7 +27,7 @@
                 <div class="col-2"></div>
                 <div class="col-md-7">
                     <form id="carta-form" >
-                        <p>ID Carta. <input id="idcarta" type="text" class="w-100" placeholder="Insertar ID" onchange="buscarcarta()"><span id="idcarta_error" class="error"></span></p>
+                        <p>ID Carta. <span><input id="idcarta" type="text" class="w-100" placeholder="Insertar ID"><div class="btn btn-info" onclick="buscarcarta()">Buscar carta</div></span><span id="idcarta_error" class="error"></span></p>
                         <div id="imagen-carta" class="text-center"></div>
                         <p>ID Expansión. <input id="idexpansion" type="text" class="w-100" placeholder="Insertar ID expansión"><span id="idexpansion_error" class="error"></span></p>
                         <p>Edición. <input id="idedicion" type="text" class="w-100" placeholder="Insertar edición"><span id="idedicion_error" class="error"></span></p>
@@ -55,31 +55,31 @@
                 <div class="d-flex">
                     <div class="col-2"></div>
                     <div class="col-md-7">
-                        <input type="number" placeholder="Carta ID">
-                        <input type="text" placeholder="Expansión">
-                        <input type="text" placeholder="Nombre">
-                        <input type="number" min="0" placeholder="Cantidad minima">
-                        <select id="tipocartabuscar">
-                            <option value="">...</option>
-                            <option value="Normal">Normal</option>
-                            <option value="Effect">Effect</option>
-                            <option value="Fusion">Fusion</option>
-                            <option value="Synchro">Synchro</option>
-                            <option value="Xyz">Xyz</option>
-                            <option value="Pendulum">Pendulum</option>
-                            <option value="Link">Link</option>
-                            <option value="Rush">Rush</option>
-                            <option value="Spell">Spell</option>
-                            <option value="Trap">Trap</option>
-                            <option value="Token">Token</option>
-                        </select>
+                        <input id="buscar_id" type="text" placeholder="Carta ID">
+                        <input id="buscar_expansion" type="text" placeholder="Expansión">
+                        <input id="buscar_nombre" type="text" placeholder="Nombre">
+                        <input id="buscar_cantidad" type="number" value="0" min="0" placeholder="Cantidad minima">
                     </div>
                     <div class="col-md-3">
-                        <button class="btn btn-primary">Buscar carta</button>
+                        <div class="btn btn-primary" onclick="filtrarcartas()">Buscar carta</div>
                     </div>
-                    <div class="col-md-12" id="listado-cartas-buscadas">
-                        
-                    </div>
+                </div>
+                <div class="col-md-12" id="listado-cartas-buscadas">
+                    <table class="table table-striped bg-warning">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>Imagen</td>
+                                <td>Nombre</td>
+                                <td>Cantidad</td>
+                                <td>Carpeta/Folio</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody id="body_cartas">
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
